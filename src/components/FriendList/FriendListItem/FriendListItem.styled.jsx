@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from 'prop-types';
 
 const ListItem = styled.li`
     margin: 20px 0 20px 0;
@@ -16,7 +17,7 @@ const ListItem = styled.li`
     :hover{
         transform: translateX(10px) translateY(-5px);
         cursor: pointer;
-    }
+    };
 `;
 
 const ItemSpan = styled.span`
@@ -26,7 +27,6 @@ const ItemSpan = styled.span`
     height: 20px;
     border-radius: 50%;
     background-color: ${props=>props.isOnline=== true? 'green': 'red'};
-
 `;
 
 const ItemImage = styled.img`
@@ -53,3 +53,9 @@ export const FriendListItem =({friends})=>{
 };
 
 
+FriendListItem.propTypes = {
+    id: PropTypes.number,
+    avatar: PropTypes.string,
+    name: PropTypes.string,
+    isOnline: PropTypes.bool,
+};
